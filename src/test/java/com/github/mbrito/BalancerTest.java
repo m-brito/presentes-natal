@@ -48,4 +48,11 @@ public class BalancerTest {
         int[] weights = {4, -6, -2};
         assertThrows(IllegalArgumentException.class, () -> Balancer.canBalance(weights));
     }
+
+    @Test
+    @DisplayName("Should not be possible to balance with a single very heavy gift")
+    public void shouldNotBePossibleToBalanceWidthSingleVeryHeavyGift() {
+        int[] weights = {20};
+        assertEquals("N", Balancer.canBalance(weights));
+    }
 }
