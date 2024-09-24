@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class BalancerTest {
 
@@ -33,5 +34,11 @@ public class BalancerTest {
     public void shouldBePossibleToBalanceWithNoGifts() {
         int[] weights = {};
         assertEquals("S", Balancer.canBalance(weights));
+    }
+
+    @Test
+    @DisplayName("Should throw exception when input is null")
+    public void shouldThrowExceptionForInvalidInput() {
+        assertThrows(NullPointerException.class, () -> Balancer.canBalance(null));
     }
 }
