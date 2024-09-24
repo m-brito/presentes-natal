@@ -41,4 +41,11 @@ public class BalancerTest {
     public void shouldThrowExceptionForInvalidInput() {
         assertThrows(NullPointerException.class, () -> Balancer.canBalance(null));
     }
+
+    @Test
+    @DisplayName("Should throw exception when input contains negative weights")
+    public void shouldThrowExceptionForNegativeWeights() {
+        int[] weights = {4, -6, -2};
+        assertThrows(IllegalArgumentException.class, () -> Balancer.canBalance(weights));
+    }
 }
