@@ -13,4 +13,11 @@ public class BalancerTest {
         int[] weights = {4, 6, 2};
         assertEquals("S", Balancer.canBalance(weights));
     }
+
+    @Test
+    @DisplayName("Should be not possible to balance the sleigh with gifts of weights 6 and 6")
+    public void shouldNotBePossibleToBalanceWithWeights66() {
+        int[] weights = {6, 6};
+        assertEquals("N", Balancer.canBalance(weights));
+    }
 }
